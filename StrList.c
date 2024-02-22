@@ -308,7 +308,7 @@ int StrList_isEqual(const StrList* StrList1, const StrList* StrList2){
     
     Node* ptr1 = StrList1->_head;
     Node* ptr2 = StrList2->_head;
-    int ans = 0;
+    
     
     while(ptr1 != NULL && ptr2 != NULL){
     
@@ -328,23 +328,23 @@ int StrList_isEqual(const StrList* StrList1, const StrList* StrList2){
  * Clones the given StrList. 
  * It's the user responsibility to free it with StrList_free.
  */
-StrList* StrList_clone(const StrList* StrList){
+// StrList* StrList_clone(const StrList* StrList){
     
-    StrList* cloneList = StrList_alloc();
-    if (cloneList == NULL) {
-        return NULL;
-    }
+//     StrList* cloneList = StrList_alloc();
+//     if (cloneList == NULL) {
+//         return NULL;
+//     }
 
-    Node* ptr1 = StrList->_head;
+//     Node* ptr1 = StrList->_head;
     
-    while(ptr1!= NULL){
+//     while(ptr1!= NULL){
         
-        StrList_insertLast(cloneList,ptr1->_data);
-        ptr1=ptr1->_next;
-    }
+//         StrList_insertLast(cloneList,ptr1->_data);
+//         ptr1=ptr1->_next;
+//     }
     
-    return cloneList;
-    }
+//     return cloneList;
+//     }
 
 
 
