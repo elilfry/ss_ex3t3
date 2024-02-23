@@ -335,24 +335,45 @@ int StrList_isEqual(const StrList* StrList1, const StrList* StrList2){
  */
 // StrList* StrList_clone(const StrList* StrList){
     
-//     StrList* cloneList = StrList_alloc();
-//     if (cloneList == NULL) {
-//         return NULL;
-//     }
+//     StrList* clone = StrList_alloc();
+    
 
 //     Node* ptr1 = StrList->_head;
     
 //     while(ptr1!= NULL){
         
-//         StrList_insertLast(cloneList,ptr1->_data);
+//         StrList_insertLast(clone,ptr1->_data);
 //         ptr1=ptr1->_next;
 //     }
     
-//     return cloneList;
+//     return clone;
 //     }
 
+/*
+ * Reverces the given StrList. 
+ */
+void StrList_reverse( StrList* StrList){
 
+    Node* prev = NULL;
+    Node* curr = StrList->_head;
+    Node* after = NULL;
 
+    while (curr != NULL)
+    {
+        after = curr->_next;
+        curr->_next = prev; //the change
+
+        prev = curr;
+        curr = after;
+
+    }
+    StrList->_head=prev;
+}
+
+/*
+ * Sort the given list in lexicographical order 
+ */
+void StrList_sort( StrList* StrList);
 
 
 

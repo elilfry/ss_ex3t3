@@ -82,7 +82,7 @@ int main() {
                 StrList_removeAt(list,index2);
                      break;
             case 10:
-               // StrList_reverse(list);
+               StrList_reverse(list);
                      break;
             case 11:
                 StrList_free(list);// check
