@@ -33,9 +33,7 @@ Node* Node_alloc(const char* data, Node* next) {
     if (p->_data == NULL) {
         free(p); // Free the previously allocated node
         return NULL;
-    } else {
-        p->_data = NULL;
-    }
+    } 
     
     // Set the next pointer
     p->_next = next;
@@ -106,6 +104,8 @@ size_t StrList_size(const StrList* StrList){
  * Inserts an element in the end of the StrList.
  */
 void StrList_insertLast(StrList* StrList, const char* data){
+   
+   
    // Allocate memory for the new node
     Node* newNode = Node_alloc(data, NULL);
    
@@ -137,6 +137,7 @@ void StrList_insertAt(StrList* StrList, const char* data,int index){
     if (index == 0) { // Insert at the head
         newNode->_next = StrList->_head;
         StrList->_head = newNode;
+        
     } else {
         Node* ptr = StrList->_head;
         for (int i = 0; i < index - 1 && ptr != NULL; i++) {
@@ -167,6 +168,10 @@ char* StrList_firstData(const StrList* StrList){
  * Prints the StrList to the standard output.
  */
 void StrList_print(const StrList* StrList){
+    
+    
+    
+    
     if (StrList->_head == NULL) {
         return;
     }

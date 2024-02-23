@@ -45,7 +45,9 @@ int main() {
                 
                 break;
             case 2:// Insert string in some index
+                    printf("enter index\n");
                     scanf("%d", &index);
+                    printf("enter word\n");
                     scanf("%s", sentence);
                     StrList_insertAt(list, sentence, index);
         
