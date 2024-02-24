@@ -88,16 +88,16 @@ int main() {
                 StrList_free(list);// check
                      break;
             case 12:
-              //  StrList_sort(list);
+               StrList_sort(list);
 
                      break;
             case 13:
-            //     if(StrList_isSorted(list)){
-            //     printf("true\n");
-            // }
-            //     else {
-            //     printf("false\n");
-            // }
+                if(StrList_isSorted(list)){
+                printf("true\n");
+            }
+                else {
+                printf("false\n");
+            }
                      break;    
             default:
                     printf("Invalid choice\n");

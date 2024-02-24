@@ -333,21 +333,21 @@ int StrList_isEqual(const StrList* StrList1, const StrList* StrList2){
  * Clones the given StrList. 
  * It's the user responsibility to free it with StrList_free.
  */
-// StrList* StrList_clone(const StrList* StrList){
+StrList* StrList_clone(const StrList* Strlist){
     
-//     StrList* clone = StrList_alloc();
+    StrList* clone = StrList_alloc();
     
 
-//     Node* ptr1 = StrList->_head;
+    Node* ptr1 = Strlist->_head;
     
-//     while(ptr1!= NULL){
+    while(ptr1!= NULL){
         
-//         StrList_insertLast(clone,ptr1->_data);
-//         ptr1=ptr1->_next;
-//     }
+        StrList_insertLast(clone,ptr1->_data);
+        ptr1=ptr1->_next;
+    }
     
-//     return clone;
-//     }
+    return clone;
+    }
 
 /*
  * Reverces the given StrList. 
@@ -370,11 +370,56 @@ void StrList_reverse( StrList* StrList){
     StrList->_head=prev;
 }
 
+// /*
+//  * Sort the given list in lexicographical order 
+//  */
+
+
+
+    // Function to swap the data of two nodes
+    void swap(Node* a, Node* b) {
+        char* temp = a->_data;
+        a->_data = b->_data;
+        b->_data = temp;
+    }
+    void StrList_sort( StrList* StrList){
+        if (StrList == NULL || StrList->_head == NULL || StrList->_head->_next == NULL)
+        return; // Nothing to sort or only one element
+    
+    int swapped;
+    Node* ptr1;
+    Node* lptr = NULL;
+
+    do {
+        swapped = 0;
+        ptr1 = StrList->_head;
+
+        while (ptr1->_next != lptr) {
+            if (strcmp(ptr1->_data, ptr1->_next->_data) > 0) {
+                swap(ptr1, ptr1->_next);
+                swapped = 1;
+            }
+            ptr1 = ptr1->_next;
+        }
+        lptr = ptr1;
+    } while (swapped);
+    
+}
+
 /*
- * Sort the given list in lexicographical order 
+ * Checks if the given list is sorted in lexicographical order
+ * returns 1 for sorted,   0 otherwise
  */
-void StrList_sort( StrList* StrList);
+int StrList_isSorted(StrList* StrList){
+    Node* ptr = StrList->_head;
 
-
-
+    
+    while (ptr != NULL && ptr->_next != NULL) {
+        if (strcmp(ptr->_data, ptr->_next->_data) > 0) {
+            return 0; // Not sorted
+        }
+        ptr = ptr->_next;
+    }
+    return 1; 
+}
 
