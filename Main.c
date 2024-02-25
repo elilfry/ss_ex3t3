@@ -11,9 +11,11 @@ int main() {
     //switch case of 1-13 +0 
       
    do {
-       printf("enter your choice \n");
+      // printf("enter your choice \n");
        scanf("%d",&choice);
-   
+        getchar();
+
+
         switch (choice) {
            
            case 0:
@@ -24,11 +26,11 @@ int main() {
             case 1:
              //the scan func
     
-    printf("enter the number of word \n");
+    //printf("enter the number of word \n");
     scanf("%d",&wordCnt);
     getchar();
     
-    printf("Enter a sentence: ");
+    //printf("Enter a sentence: ");
     fgets(sentence, sizeof(sentence), stdin);
 
 
@@ -45,9 +47,9 @@ int main() {
                 
                 break;
             case 2:// Insert string in some index
-                    printf("enter index\n");
+                   // printf("enter index\n");
                     scanf("%d", &index);
-                    printf("enter word\n");
+                   // printf("enter word\n");
                     scanf("%s", sentence);
                     StrList_insertAt(list, sentence, index);
         
@@ -59,25 +61,25 @@ int main() {
                    printf("%zu \n", StrList_size(list));
                     break;
             case 5:
-                printf("5 -enter index");
+               // printf("5 -enter index");
                 scanf("%d", &index2);
                 StrList_printAt(list ,index2);
                     break;
             case 6:
-                printf("%d", StrList_printLen(list)); 
+                printf("%d \n", StrList_printLen(list)); 
                     break;
             case 7:
-                printf("7- enter a string");
+                //printf("7- enter a string");
                 scanf("%s", sentence);
-                printf("%d",StrList_count(list,sentence));
+                printf("%d \n",StrList_count(list,sentence));
                     break;
             case 8:
-                printf("8 -enter a string");
+                //printf("8 -enter a string");
                 scanf("%s", sentence);
                 StrList_remove(list,sentence);
                      break;
             case 9:
-                printf(" 9 -enter index");
+                //printf(" 9 -enter index");
                 scanf("%d", &index2);
                 StrList_removeAt(list,index2);
                      break;

@@ -76,8 +76,11 @@ void StrList_free(StrList* StrList){
         p1 = p1->_next;
         Node_free(p2);
     }
-     StrList->_head = NULL;
-    free(StrList);
+     //StrList->_head = NULL;
+    // free(StrList);
+    // StrList = NULL;
+    StrList->_head = NULL;
+    StrList->_size = 0;
 }
 
 /*
@@ -111,6 +114,7 @@ void StrList_insertLast(StrList* StrList, const char* data){
    
     if (StrList->_head == NULL){ //if it empty
         StrList->_head = newNode;
+        StrList->_size++;
         return;
     }
     else {
@@ -169,9 +173,6 @@ char* StrList_firstData(const StrList* StrList){
  */
 void StrList_print(const StrList* StrList){
     
-    
-    
-    
     if (StrList->_head == NULL) {
         return;
     }
@@ -210,7 +211,7 @@ int StrList_printLen(const StrList* Strlist){
     int charsAmount = 0;
     Node* ptr = Strlist->_head;
     
-    while (ptr !=0) {
+    while (ptr !=NULL) {
         
         charsAmount = charsAmount + strlen(ptr->_data);
         
