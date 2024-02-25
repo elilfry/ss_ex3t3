@@ -178,8 +178,11 @@ void StrList_print(const StrList* StrList){
         return;
     }
      Node* ptr = StrList->_head;
-    while (ptr->_next != NULL){
-        printf("%s ", ptr->_data); 
+    while (ptr != NULL){
+        if (ptr->_next == NULL){
+            printf("%s", ptr->_data); 
+        }else {
+        printf("%s ", ptr->_data); }
         ptr = ptr->_next;
     }
      printf("\n"); 
