@@ -90,16 +90,7 @@ size_t StrList_size(const StrList* StrList){
     
    return StrList ? StrList->_size : 0;
    
-    // if (StrList == NULL){ //if it empty
-    //     return 0;
-    // }
-    // int count =0;
-    //  Node* ptr = StrList->_head;
-    // while (ptr != NULL){
-    //     count ++;
-    //     ptr = ptr->_next;
-    // }
-    // return count;
+    
 }
 
 

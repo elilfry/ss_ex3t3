@@ -87,7 +87,7 @@ int main() {
                StrList_reverse(list);
                      break;
             case 11:
-                StrList_free(list);// check
+                StrList_free(list);
                      break;
             case 12:
                StrList_sort(list);
