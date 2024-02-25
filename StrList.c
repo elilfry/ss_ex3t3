@@ -174,10 +174,11 @@ char* StrList_firstData(const StrList* StrList){
 void StrList_print(const StrList* StrList){
     
     if (StrList->_head == NULL) {
+        printf("\n");
         return;
     }
      Node* ptr = StrList->_head;
-    while (ptr != NULL){
+    while (ptr->_next != NULL){
         printf("%s ", ptr->_data); 
         ptr = ptr->_next;
     }

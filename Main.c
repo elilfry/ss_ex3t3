@@ -58,7 +58,7 @@ int main() {
                     StrList_print(list);
                     break;
             case 4:
-                   printf("%zu \n", StrList_size(list));
+                   printf("%zu\n", StrList_size(list));
                     break;
             case 5:
                // printf("5 -enter index");
@@ -66,12 +66,12 @@ int main() {
                 StrList_printAt(list ,index2);
                     break;
             case 6:
-                printf("%d \n", StrList_printLen(list)); 
+                printf("%d\n", StrList_printLen(list)); 
                     break;
             case 7:
                 //printf("7- enter a string");
                 scanf("%s", sentence);
-                printf("%d \n",StrList_count(list,sentence));
+                printf("%d\n",StrList_count(list,sentence));
                     break;
             case 8:
                 //printf("8 -enter a string");
